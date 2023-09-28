@@ -1,23 +1,34 @@
 const express = require('express');
-const axios = require('axios');
 const app = express();
-app.use(express.json());
+const bodyParser = require('body-parser');
+const fs = require ('fs');
+const cors = require ('cors');
 
-app.get('/', (req, res) => {
-  res.json({ status: "ok" });
-});
 
-const API_URL = 'https://thronesapi.com/api/v2/Characters'; // Använd din API-länk här
 
-app.get('/fetch-data', async (req, res) => {
-  try {
-    const response = await axios.get(API_URL);
-    const data = response.data;
-    res.json(data);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: 'Something went wrong' });
+// Middleware för att tolka JSON-förfrågningar
+app.use (express.json);
+app.use(bodyParser.json());
+app.use (cors());
+
+// Array för att lagra data
+let bilar = [];
+
+fs.readFile('bilar.json', 'utf8',(err,data)=> {
+  if(!err){
+    bilar = JSON.parse(data);
   }
+})
+
+// POST-rutt för att lägga till data i "bilar"
+app.post('/bilar', (req, res) => {
+  const nyBil = req.body;
+  data.push(nyBil);
+  res.json({ meddelande: 'Bilen har lagts till i "bilar".' });
 });
 
-module.exports = app;
+// GET-rutt för att hämta data från "data"
+app.get('/bilar', (req, res) => {
+  res.json(bilar);
+});
+

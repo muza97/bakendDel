@@ -1,4 +1,8 @@
-const functions = require('firebase-functions');
-const app = require('./server');
+require('dotenv').config();
+const app = require('./server.js');
 
-exports.api = functions.https.onRequest(app);
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
