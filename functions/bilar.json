@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "volvo",
+    "modell": "hej",
+    "farg": "blå"
+  },
+  {
+    "id": 10,
+    "name": "volvo",
+    "modell": "720",
+    "farg": "blå"
+  },
+  {
+    "id": 2,
+    "name": "volvo",
+    "modell": "720",
+    "farg": "blå"
+  },
+  {
+    "id": 3,
+    "name": "volvo",
+    "modell": "740",
+    "farg": "lila"
+  },
+  {
+    "id": 4,
+    "name": "volvo",
+    "modell": "v40",
+    "farg": "blå"
+  },
+  {
+    "id": 8,
+    "name": "volvo",
+    "modell": "v50",
+    "farg": "grå"
+  },
+  {
+    "id": 5,
+    "name": "volvo",
+    "modell": "xc40",
+    "farg": "blå"
+  },
+  {
+    "id": 6,
+    "name": "volvo",
+    "modell": "xc70",
+    "farg": "blå"
+  },
+  {
+    "id": 7,
+    "name": "volvo",
+    "modell": "xc90",
+    "farg": "blå"
+  }
+]
